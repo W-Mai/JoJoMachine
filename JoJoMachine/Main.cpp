@@ -20,8 +20,22 @@ int main() {
 		cout << x.second.getName() << endl;
 	}
 
+	const auto codes = L""
+			"  "       "  "
+		  "ÖìÖìÖìÖì    ÖìÖìÖìÖì"
+		 "ÍôÃ¨  ÖìÖì  ÖìÖì  ÍôÃ¨"
+		"ÖìÖìÃ¨ÖìÖìÖìÃ¨ÖìÖìÖìÃ¨Öì¹·"
+		"¹·¹·¹·Öíß÷Ã¨ÖìÃ¨ÖìÃ¨ÖíÃ¨Ã¨"
+		"ÖìÍô¹·    ß÷¹·Öí    ß÷Ã¨"
+		"Ã¨ºßÃ¨Öí  ÖíÖíºßÖì  ÖìÖìÖì"
+		"ÖìÖìÖìºßºßÖìÖìÖìºßÃ¨Ã¨ºß¹·"
+		"Öíºß¹·ºßÖì ÖìÖì ºßÖíÖíÖíÖí"
+		  "ÖíÖíºßÖíÖíÖíÖíÖíÖíÖíÖí"
+		   "ºßÃ¨Ã¨ÖìºßÃ¨ÖìÖìºß"
+			 """""""""""";
+	
 	XParser ps(commandFactory);
-	auto res = ps.getCodes(L"ÎÒÈÕ");
+	auto res = ps.getCodes(codes);
 	for (int i = 0; i<res.getCodes().size();i++) {
 		wcout << res.getCode() << endl;
 		res.next();

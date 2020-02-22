@@ -10,7 +10,13 @@ public:
 	}
 	XCodes getCodes(std::wstring content) {
 		auto rtn = XCodes();
-		rtn.loadCodes(std::vector<wchar_t>(content.begin(), content.end()));
+		std::vector<wchar_t> resString;
+		for (const auto& x:content) {
+			if (!iswspace(x)) {
+				resString.push_back(x);
+			}
+		}
+		rtn.loadCodes(resString);
 		return rtn;
 	}
 };
