@@ -44,7 +44,7 @@ class XCodes {
 public:
 	void loadCodes(std::vector<CodesElemType> codes);
 	CodesElemType getCode();
-	XMemory<CodesElemType> getCodes();
+	auto getCodes();
 	int index();
 	int jump(int index);
 	int next();
@@ -140,10 +140,11 @@ inline void XCodes::loadCodes(std::vector<CodesElemType> codes) {
 	mem.loadMem(codes);
 }
 inline XCodes::CodesElemType XCodes::getCode() {
-	return mem.getCurrentIndex();
-}
-inline XMemory<XCodes::CodesElemType> XCodes::getCodes() {
 	return mem.getNode(mem.getCurrentIndex());
+
+}
+inline auto XCodes::getCodes() {
+	return mem.getAllNodes();
 }
 inline int XCodes::index() {
 	return mem.getCurrentIndex();

@@ -7,7 +7,7 @@ class XCommandFactory {
 	std::map<std::string, CommandBase> commands;
 public:
 	bool addCommand(CommandBase cmd) {
-		if (commands.find(cmd.getName()) == commands.end()) {
+		if (commands.find(cmd.getName()) != commands.end()) {
 			return false;
 		}
 		commands[cmd.getName()] = cmd;
